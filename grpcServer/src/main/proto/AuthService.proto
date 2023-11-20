@@ -1,0 +1,29 @@
+syntax = "proto3";
+package com.example.grpc;
+
+message LoginRequest {
+
+  string login = 1;
+  string password = 2;
+
+}
+
+message RegRequest {
+
+  string login = 1;
+  string password = 2;
+
+}
+
+message LoginResponse {
+  string greeting = 1;
+}
+
+message RegResponse {
+  string success = 1;
+}
+
+service AuthService {
+  rpc greeting(LoginRequest) returns (LoginResponse);
+  rpc registration(RegRequest) returns (RegResponse);
+}
